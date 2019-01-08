@@ -4,6 +4,7 @@ import io.github.yizhiru.thulac4j.term.TokenItem;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import static io.github.yizhiru.thulac4j.util.ModelPaths.POS_TAGGING_LABEL_PATH;
@@ -16,6 +17,12 @@ public class POSTagger extends SPChineseTokenizer {
     public POSTagger(String weightPath, String featurePath) throws IOException {
         super(new FileInputStream(weightPath),
                 new FileInputStream(featurePath),
+                POSTagger.class.getResourceAsStream(POS_TAGGING_LABEL_PATH));
+    }
+
+    public POSTagger(InputStream weightInputStream, InputStream featureInputStream) {
+        super(weightInputStream,
+                featureInputStream,
                 POSTagger.class.getResourceAsStream(POS_TAGGING_LABEL_PATH));
     }
 

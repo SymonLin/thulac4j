@@ -51,6 +51,8 @@ public class SPChineseTokenizer {
     @Nullable
     protected LexiconCementer uwCementer = null;
 
+    private List<LexiconCementer> customCementer = new ArrayList<>();
+
     private static final class Config {
 
         /**
@@ -205,6 +207,9 @@ public class SPChineseTokenizer {
         if (uwCementer != null) {
             uwCementer.cement(tokenItems);
         }
+        for (LexiconCementer customCementer : customCementer) {
+            customCementer.cement(tokenItems);
+        }
         return tokenItems;
     }
 
@@ -216,6 +221,11 @@ public class SPChineseTokenizer {
     public void addUserWords(List<String> words) {
         DoubleArrayTrie dat = DoubleArrayTrie.make(words);
         this.uwCementer = new LexiconCementer(dat, "uw");
+    }
+
+    public void addCustomWords(List<String> words, String pos) {
+        DoubleArrayTrie dat = DoubleArrayTrie.make(words);
+        this.customCementer.add(new LexiconCementer(dat, pos));
     }
 
     /**
