@@ -15,6 +15,8 @@ public enum LexiconEnum {
     OPERATION("手术", "op", "operation.dict"),
     PERIOD("时刻", "ti", "period.dict"),
     DOSE("剂量", "dose", "dose.dict"),
+    ADVICE("医嘱", "advice", "advice.dict"),
+    SYMPTOM("症状", "sym", "symptom.dict"),
     ;
 
     private String name;

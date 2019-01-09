@@ -44,6 +44,8 @@ public enum POSEnum {
     INSPECTION("ex", "检查检验"),
     OPERATION("op", "手术"),
     PERIOD("ti", "时刻"),
+    ADVICE("advice", "医嘱"),
+    SYM("sym", "症状"),
     ;
 
     private String key;
