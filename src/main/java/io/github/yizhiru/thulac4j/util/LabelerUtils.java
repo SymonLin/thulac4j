@@ -13,7 +13,7 @@ import java.util.List;
  * @author linjian
  * @date 2019/1/8
  */
-public class LabelerUtils {
+public final class LabelerUtils {
 
     private static final String POS_TAGGING_MODEL_BIN_PATH = "/models/model_c_model.bin";
     private static final String POS_TAGGING_DAT_BIN_PATH = "/models/model_c_dat.bin";
