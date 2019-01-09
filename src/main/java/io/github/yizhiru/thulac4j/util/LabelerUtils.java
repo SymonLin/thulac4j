@@ -42,7 +42,7 @@ public final class LabelerUtils {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             String s;
             while ((s = reader.readLine()) != null) {
-                wordList.add(s);
+                wordList.add(s.toLowerCase());
             }
             reader.close();
         } catch (Exception e) {

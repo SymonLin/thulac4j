@@ -222,6 +222,7 @@ public class DoubleArrayTrie implements Serializable {
      * @return 若匹配上，则为转移后index的负值；否则，则返回已匹配上的字符数
      */
     public int match(int startIndex, String str) {
+        str = str.toLowerCase();
         int index = startIndex;
         for (int i = 0; i < str.length(); i++) {
             index = transition(index, str.charAt(i));
